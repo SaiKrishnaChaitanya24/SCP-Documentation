@@ -16,7 +16,7 @@ This documentation provides an overview of the DiCIPHR-Pipeline and detailed ins
    :align: center
 
 
-Indices and tables
+Index
 ==================
 
 * :doc:`RunningSCP`
