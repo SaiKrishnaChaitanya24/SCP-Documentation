@@ -65,7 +65,7 @@ Note: ``/folder_path:/folder_path`` needs to be replaced with the absolute path 
 Remember to replace ``{subject_name}``, ``{unprocessed T1 image}``, ``{DTI-T1-0GenericAffine.mat}``, ``{tensor mask}``, ``{t1_brain.nii.gz}``, and ``{dico-0InverseWarp.nii.gz}`` with the actual values for your specific data (with absolute path).
 
 
-Indices and tables
+Index
 ==================
 
 * :doc:`index`
