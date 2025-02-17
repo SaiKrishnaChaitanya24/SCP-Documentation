@@ -73,9 +73,13 @@ For ``topup``:
 
 Optional commands are - -P, -K, -T, -A, -l, -g, -n
 
+
 Index
 ==================
 
 * :doc:`index`
+* :doc:`Installation`
 * :doc:`RunningSCP`
+* :doc:`PerformanceBenchmarks`
+* :doc:`Citations`
 * :ref:`search`
