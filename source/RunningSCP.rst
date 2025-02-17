@@ -74,4 +74,4 @@ Index
 * :doc:`UsageNotes`
 * :doc:`PerformanceBenchmarks`
 * :doc:`Citations`
-* :ref:`search``
+* :ref:`search`
