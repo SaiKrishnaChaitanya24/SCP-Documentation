@@ -22,7 +22,9 @@ Step 2: Build the Singularity Container
 
 Build the ``structural_connectivity_pipeline.sif`` Singularity container using the provided Singularity definition file. This ensures you have the necessary environment to run the pipeline. Use the following command::
 
-        sbatch --cpus-per-task=4 --mem=32G --wrap="singularity build ./Structural-Connectivity-Pipeline/structural_connectivity_pipeline.sif ./Structural-Connectivity-Pipeline/Singularity.def"
+        cd Structural-Connectivity-Pipeline
+
+        sbatch --cpus-per-task=4 --mem=32G --wrap="singularity build structural_connectivity_pipeline.sif Singularity.def"
 
 Step 3: Create Output Directory
 -------------------------------
@@ -40,19 +42,23 @@ Bind the folder containing all the required files path as ``/folder_path:/folder
 
 For Topup::
 
-        sbatch --cpus-per-task=4 --job-name=scp --mem=32G --time=2-00:00:00 --wrap="singularity run --no-home --bind /folder_path:/folder_path --bind {output_path}:/output ./Structural-Connectivity-Pipeline/structural_connectivity_pipeline.sif -s {subject_name} -t {unprocessed T1 image} -a {DTI-T1-0GenericAffine.mat} -d {DWI Preprocessed image} -m {tensor mask} -o /output -f Topup -r {t1_brain.nii.gz}"
+        if you are already in the Structural-Connectivity-Pipeline directory run below command, else change your current path to where Structural-Connectivity-Pipeline directory is and run the below command
+
+        sbatch --cpus-per-task=4 --job-name=scp --mem=32G --time=2-00:00:00 --wrap="singularity run --no-home --bind /folder_path:/folder_path --bind {output_path}:/output structural_connectivity_pipeline.sif -s {subject_name} -t {unprocessed T1 image} -a {DTI-T1-0GenericAffine.mat} -d {DWI Preprocessed image} -m {tensor mask} -o /output -f Topup -r {t1_brain.nii.gz}"
 
 If you already implemented freesurfer and want to use this pipeline, then use the command below (Note: in the command below the freesurfer path directory is bound as output path and the freesurfer path must be with respect to the subject name.)::
 
-        sbatch --cpus-per-task=4 --job-name=scp --mem=32G --time=2-00:00:00 --wrap="singularity run --no-home --bind /folder_path:/folder_path --bind {output_path}:/output ./Structural-Connectivity-Pipeline/structural_connectivity_pipeline.sif -s {subject_name} -t {unprocessed T1 image} -a {DTI-T1-0GenericAffine.mat} -d {DWI Preprocessed image} -m {tensor mask} -o /output -f Topup -r {t1_brain.nii.gz} -b True"
+        sbatch --cpus-per-task=4 --job-name=scp --mem=32G --time=2-00:00:00 --wrap="singularity run --no-home --bind /folder_path:/folder_path --bind {output_path}:/output structural_connectivity_pipeline.sif -s {subject_name} -t {unprocessed T1 image} -a {DTI-T1-0GenericAffine.mat} -d {DWI Preprocessed image} -m {tensor mask} -o /output -f Topup -r {t1_brain.nii.gz} -b True"
 
 For notopup::
 
-        sbatch --cpus-per-task=4 --job-name=scp --mem=32G --time=2-00:00:00 --wrap="singularity run --no-home --bind /folder_path:/folder_path --bind {output_path}:/output ./Structural-Connectivity-Pipeline/structural_connectivity_pipeline.sif -s {subject_name} -t {unprocessed T1 image} -a {DTI-T1-0GenericAffine.mat} -d {DWI Preprocessed image} -m {tensor mask} -o /output -r {t1_brain.nii.gz} -i {dico-0InverseWarp.nii.gz}"
+         if you are already in the Structural-Connectivity-Pipeline directory run below command, else change your current path to where Structural-Connectivity-Pipeline directory is and run the below command
+
+        sbatch --cpus-per-task=4 --job-name=scp --mem=32G --time=2-00:00:00 --wrap="singularity run --no-home --bind /folder_path:/folder_path --bind {output_path}:/output structural_connectivity_pipeline.sif -s {subject_name} -t {unprocessed T1 image} -a {DTI-T1-0GenericAffine.mat} -d {DWI Preprocessed image} -m {tensor mask} -o /output -r {t1_brain.nii.gz} -i {dico-0InverseWarp.nii.gz}"
 
 If you already implemented freesurfer and want to use this pipeline, then use the command below (Note: in the command below the freesurfer path directory is bound as output path and the freesurfer path must be with respect to the subject name.)::
 
-        sbatch --cpus-per-task=4 --job-name=scp --mem=32G --time=2-00:00:00 --wrap="singularity run --no-home --bind /folder_path:/folder_path --bind {output_path}:/output ./Structural-Connectivity-Pipeline/structural_connectivity_pipeline.sif -s {subject_name} -t {unprocessed T1 image} -a {DTI-T1-0GenericAffine.mat} -d {DWI Preprocessed image} -m {tensor mask} -o /output -r {t1_brain.nii.gz} -i {dico-0InverseWarp.nii.gz} -b True"
+        sbatch --cpus-per-task=4 --job-name=scp --mem=32G --time=2-00:00:00 --wrap="singularity run --no-home --bind /folder_path:/folder_path --bind {output_path}:/output structural_connectivity_pipeline.sif -s {subject_name} -t {unprocessed T1 image} -a {DTI-T1-0GenericAffine.mat} -d {DWI Preprocessed image} -m {tensor mask} -o /output -r {t1_brain.nii.gz} -i {dico-0InverseWarp.nii.gz} -b True"
 
 Note: ``/folder_path:/folder_path`` needs to be replaced with the absolute path where your data is stored.
 
