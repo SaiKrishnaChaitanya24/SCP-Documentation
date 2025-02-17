@@ -19,6 +19,9 @@ This documentation provides an overview of the Structural-Connectivity Pipeline 
 Index
 ==================
 
+* :doc:`Installation`
 * :doc:`RunningSCP`
 * :doc:`UsageNotes`
+* :doc:`PerformanceBenchmarks`
+* :doc:`Citations`
 * :ref:`search`
