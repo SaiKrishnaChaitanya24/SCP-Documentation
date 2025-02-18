@@ -69,7 +69,7 @@ For ``topup``:
    - ``-r``
    - ``-b``
 
-Optional commands are - -P, -K, -T, -A, -l, -g, -n
+Optional commands are: -P, -K, -T, -A, -l, -g, -n
 
 
 Index
