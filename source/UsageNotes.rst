@@ -19,8 +19,6 @@ Command-Line Arguments
      - Output Directory
    * - ``-A``
      - Angle threshold for tractography. Default: 60
-   * - ``-p``
-     - Phase encoding value
    * - ``-l``
      -  Step size for tractography, in mm. Default: 1
    * - ``-n``
