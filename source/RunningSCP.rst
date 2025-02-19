@@ -28,9 +28,7 @@ Build the ``structural_connectivity_pipeline.sif`` Singularity container using t
 
 .. code-block:: bash
 
-        cd Structural-Connectivity-Pipeline
-
-        sbatch --cpus-per-task=4 --mem=32G --wrap="apptainer build structural_connectivity_pipeline.sif Singularity.def"
+        sbatch --cpus-per-task=4 --mem=32G --wrap="apptainer build structural_connectivity_pipeline.sif ./Structural-Connectivity-Pipeline/Singularity.def"
 
 Step 3: Create Output Directory
 -------------------------------
